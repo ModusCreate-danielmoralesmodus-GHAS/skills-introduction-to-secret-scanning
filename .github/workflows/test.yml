@@ -1,0 +1,40 @@
+name: My Workflow
+paths-ignore:
+  - ".env"             # Ignore .env
+  - "tests/examples/*.js" # Ignore specific file types in a subfolder
+  - "README.md"           # Ignore a specific file
+  - "**/tests/**"      # Ignores secrets in any folder named 'tests'
+  - "**/node_modules/**" # Ignores all node modules
+  - "docs/*.md"          # Ignores all Markdown files in the root docs folder
+  - "samples/**/*.json"  # Ignores all JSON files inside 'samples' or its subfolders
+
+  - name: Secret Scanning Review Action
+  # You may pin to the exact commit or the version.
+  # uses: advanced-security/secret-scanning-review-action@198e0016c283eccc05bbcd365464b19952758052
+  uses: advanced-security/secret-scanning-review-action@v2.2.2
+  with:
+    # GitHub Access Token that provides access to the repository. Must be provided via either parameter or environment variable. The github.token cannot be used as it does not provide secret scanning alert access.
+    token: # optional
+    # A boolean to raise workflow/annotation error(instead of warning) if alert is detected.
+    fail-on-alert: # optional, default is false
+    # A boolean to exclude an alert from FailOnAlert if it is marked as closed (state: 'resolved').
+    fail-on-alert-exclude-closed: # optional, default is false
+    # A boolean to disable the PR comment feature.
+    disable-pr-comment: # optional, default is false
+    # The runtime to use for the action (`powershell` or `python`).
+    runtime: # optional, default is powershell
+    # The URL of the http proxy to use for GitHub API requests (python runtime only).
+    python-http-proxy-url: # optional, default is ""
+    # The URL of the https proxy to use for GitHub API requests (python runtime only).
+    python-https-proxy-url: # optional, default is ""
+    # A boolean to enable or disable SSL verification for GitHub API requests (python runtime only). NOTE: This is NOT recommended and may introduce additional security risks.
+    python-verify-ssl: # optional, default is true
+    # A boolean to enable or disable skipping closed alerts from evaluation.
+    skip-closed-alerts: # optional, default is false
+    # [DEPRECATED - Use skip-closed-alerts instead] A boolean to enable or disable skipping closed alerts from evaluation (python runtime only).
+    python-skip-closed-alerts: # optional, default is false
+    # A boolean to disable the workflow summary comment.
+    disable-workflow-summary: # optional, default is false
+    # [DEPRECATED - Use disable-workflow-summary instead] A boolean to disable the workflow summary comment (python runtime only).
+    python-disable-workflow-summary: # optional, default is false
+          
