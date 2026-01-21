@@ -6,4 +6,10 @@ updates:
       interval: "monthly"
       
 paths-ignore:
-  - ".github/steps/**"             # Ignore everything in the docs folder
+  - ".env"             # Ignore .env
+  - "tests/examples/*.js" # Ignore specific file types in a subfolder
+  - "README.md"           # Ignore a specific file
+  - "**/tests/**"      # Ignores secrets in any folder named 'tests'
+  - "**/node_modules/**" # Ignores all node modules
+  - "docs/*.md"          # Ignores all Markdown files in the root docs folder
+  - "samples/**/*.json"  # Ignores all JSON files inside 'samples' or its subfolders
