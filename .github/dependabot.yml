@@ -4,3 +4,6 @@ updates:
     directory: "/"
     schedule:
       interval: "monthly"
+      
+paths-ignore:
+  - ".github/steps/**"             # Ignore everything in the docs folder
