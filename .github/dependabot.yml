@@ -6,7 +6,7 @@ updates:
       interval: "monthly"
       
 paths-ignore:
-  - ".env"             # Ignore .env
+  # - ".env"             # Ignore .env
   - "tests/examples/*.js" # Ignore specific file types in a subfolder
   - "README.md"           # Ignore a specific file
   - "**/tests/**"      # Ignores secrets in any folder named 'tests'
